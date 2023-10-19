@@ -13,11 +13,6 @@ this repo is for tracking and storing my dotfiles over multiple devices.
 
 ## How to
 
-> reference: 
-> - [Medium | How to manage your dotfiles with git](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
-> - [Hackmd | Git Bare Repo](https://hackmd.io/@hbdoy/BJz0V5tv8)
-> - [Github | config backups between misc machines](https://github.com/korbendallaskoop/dotfiles#readme)
-
 ### init on primary device
 
 ```
@@ -71,3 +66,10 @@ dotfiles checkout
         - powerlevel10k
         - exa
         - tmux
+
+## References 
+
+- [Medium | How to manage your dotfiles with git](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
+- [Hackmd | Git Bare Repo](https://hackmd.io/@hbdoy/BJz0V5tv8)
+- [Github | config backups between misc machines](https://github.com/korbendallaskoop/dotfiles#readme)
+- [Web | Your unofficial guide to dotfiles on Github](https://dotfiles.github.io/)
