@@ -14,9 +14,9 @@ this repo is for tracking and storing my dotfiles over multiple devices.
 ## How to
 
 > reference: 
-- [Medium | How to manage your dotfiles with git](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
-- [Hackmd | Git Bare Repo](https://hackmd.io/@hbdoy/BJz0V5tv8)
-- [Github | config backups between misc machines](https://github.com/korbendallaskoop/dotfiles#readme)
+> - [Medium | How to manage your dotfiles with git](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
+> - [Hackmd | Git Bare Repo](https://hackmd.io/@hbdoy/BJz0V5tv8)
+> - [Github | config backups between misc machines](https://github.com/korbendallaskoop/dotfiles#readme)
 
 ### init on primary device
 
@@ -45,11 +45,11 @@ dotfiles commit -m "add .zshrc"
 dotfiles push
 ```
 
-- `Git bare repo` is not suppose to store anything
-- but if there is a need to
+- `Git bare repo` is not suppose to store anything, but if there is a need to
 ```
 # add file or folder to repo
 alias dotfilesa='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add'
+
 # remove file or folder from repo
 alias dotfilesr='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached'
 ```
