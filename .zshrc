@@ -14,18 +14,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # need Poetry's bin directory (/Users/zionn/.local/bin) in your PATH environment variable
 export PATH="/Users/zionn/.local/bin:$PATH"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
+# Set name of the theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k" # set this theme if using p10k
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "avit" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -33,14 +25,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set this theme if using p10k
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -79,12 +63,11 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
 	zsh-autosuggestions
-	)
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,22 +92,26 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+alias docker="/Applications/Docker.app/Contents/Resources/bin/docker"
+# alternative to ls and tree
 alias ls="exa --long --icons --no-permissions --no-user --git --time-style long-iso --time=modified --group-directories-first -a"
 alias tree="exa --tree"
+# fuzzy find file from HOME directory
 alias cdfs="cd ~ && cd \$(find * -type d | fzf --height 50% --border --preview 'tree -C {}')"
+# fuzzy find file from current directory
 alias cdf="cd \$(find * -type d | fzf --height 50% --border --preview 'tree -C {}')"
 alias gnccu="cd ~ && cd Google\ Drive/My\ Drive/NCCU_courses/112-1"
 alias i112-1="cd ~ && cd Library/Mobile\ Documents/com~apple~CloudDocs/112-1"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# add file or folder to repo
+alias dotfilesa='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add'
+# remove file or folder from repo
+alias dotfilesr='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -143,11 +130,6 @@ unset __conda_setup
 
 # add new line right after every output
 #precmd() { print -rn -- $'\E[1B'; } # use p10k's config for this instead
-
-# export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
-alias docker="/Applications/Docker.app/Contents/Resources/bin/docker"
-
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 PATH=$(pyenv root)/shims:$PATH
 
