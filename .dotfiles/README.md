@@ -13,12 +13,15 @@ this repo is for tracking and storing my dotfiles over multiple devices.
 
 ## How to
 
-> reference: [Medium | How to manage your dotfiles with git](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
+> reference: 
+- [Medium | How to manage your dotfiles with git](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
+- [Hackmd | Git Bare Repo](https://hackmd.io/@hbdoy/BJz0V5tv8)
+- [Github | config backups between misc machines](https://github.com/korbendallaskoop/dotfiles#readme)
 
 ### init on primary device
 
 ```
-mkdir .dotfiles
+mkdir ~/.dotfiles
 git init --bare $HOME/.dotfiles
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -42,6 +45,15 @@ dotfiles commit -m "add .zshrc"
 dotfiles push
 ```
 
+- `Git bare repo` is not suppose to store anything
+- but if there is a need to
+```
+# add file or folder to repo
+alias dotfilesa='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add'
+# remove file or folder from repo
+alias dotfilesr='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached'
+```
+
 - clone to secondary device
 ```
 git clone --bare <github repo> $HOME/.dotfiles
@@ -51,11 +63,11 @@ dotfiles checkout
 
 ## Notes
 
-some of the plugins/features only function in `zsh`, and have to be installed manually:
-- [editor]
-    - nvim
-    - lvim
-- [terminal]
-    - powerlevel10k
-    - exa
-    - tmux
+- some of the plugins/features only function in `zsh`, and have to be installed manually:
+    - [editor]
+        - nvim
+        - lvim
+    - [terminal]
+        - powerlevel10k
+        - exa
+        - tmux
