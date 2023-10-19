@@ -7,11 +7,30 @@
 
 -- Settings
 lvim.colorscheme = "carbonfox"
+
 lvim.builtin.which_key.mappings["t"] = {
     name = "+Terminal",
     f = { "<cmd>ToggleTerm<cr>", "Floating terminal" },
     v = { "<cmd>2ToggleTerm size=60 direction=vertical<cr>", "Split vertical" },
     h = { "<cmd>2ToggleTerm size=10 direction=horizontal<cr>", "Split horizontal" },
+}
+
+-- ASCII text art generator
+-- https://textkool.com/en/ascii-art-generator?hl=default&vl=default&font=ANSI%20Shadow&text=%20happy%0Acoding
+lvim.builtin.alpha.dashboard.section.header.val = {
+    "    ██╗  ██╗ █████╗ ██████╗ ██████╗ ██╗   ██╗  ",
+    "    ██║  ██║██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝  ",
+    "    ███████║███████║██████╔╝██████╔╝ ╚████╔╝   ",
+    "    ██╔══██║██╔══██║██╔═══╝ ██╔═══╝   ╚██╔╝    ",
+    "    ██║  ██║██║  ██║██║     ██║        ██║     ",
+    "    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝        ╚═╝     ",
+    "                                               ",
+    " ██████╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗ ",
+    "██╔════╝██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝ ",
+    "██║     ██║   ██║██║  ██║██║██╔██╗ ██║██║  ███╗",
+    "██║     ██║   ██║██║  ██║██║██║╚██╗██║██║   ██║",
+    "╚██████╗╚██████╔╝██████╔╝██║██║ ╚████║╚██████╔╝",
+    " ╚═════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝ ",
 }
 
 -- Plugins
