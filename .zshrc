@@ -14,10 +14,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # need Poetry's bin directory (/Users/zionn/.local/bin) in your PATH environment variable
 export PATH="/Users/zionn/.local/bin:$PATH"
 
+PATH=$(pyenv root)/shims:$PATH
+PATH="$PATH:./node_modules/.bin"
+
 # Set name of the theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel10k/powerlevel10k" # set this theme if using p10k
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="powerlevel10k/powerlevel10k" # set this theme if using p10k
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -111,7 +114,7 @@ alias dotfilesr='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+# source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -129,9 +132,11 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # add new line right after every output
-#precmd() { print -rn -- $'\E[1B'; } # use p10k's config for this instead
-
-PATH=$(pyenv root)/shims:$PATH
+# comment this block if use p10k's config for this instead
+function echo_blank() {
+    echo
+}
+precmd_functions+=echo_blank
 
 # to manage shell history
 setopt HIST_IGNORE_DUPS

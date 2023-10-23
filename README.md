@@ -10,6 +10,7 @@ this repo is for tracking and storing my dotfiles over multiple devices.
 - `.tmux.conf`: configuration for tmux
 - `.zshrc`: zsh profile
 - `.p10k.zsh`: powerlevel10k config
+- TODO: brew list
 
 ## How to
 
