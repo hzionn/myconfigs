@@ -141,3 +141,7 @@ precmd_functions+=echo_blank
 # to manage shell history
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
+
+# dir where zsh should store cache and so
+ZDOTDIR=~/.zsh_config
+
