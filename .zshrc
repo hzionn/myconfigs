@@ -110,6 +110,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfilesa='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add'
 # remove file or folder from repo
 alias dotfilesr='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached'
+alias t='tmux'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -141,7 +142,4 @@ precmd_functions+=echo_blank
 # to manage shell history
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
-
-# dir where zsh should store cache and so
-ZDOTDIR=~/.zsh_config
 
