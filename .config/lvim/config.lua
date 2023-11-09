@@ -15,6 +15,9 @@ lvim.plugins = {
     { "sainnhe/edge" },
     { "rebelot/kanagawa.nvim" },
     { "EdenEast/nightfox.nvim" },
+    { "daschw/leaf.nvim" },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "folke/tokyonight.nvim", priority = 1000 }
 }
 
 -- Vim Options
@@ -25,17 +28,36 @@ vim.opt.tabstop = 4 -- insert n spaces for a tab
 vim.opt.scrolloff = 15
 vim.opt.relativenumber = true
 vim.opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.colorcolumn = "120"
+
+-- set number of space for different language
+vim.cmd[[
+    autocmd BufEnter *.js setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd BufEnter *.c setlocal tabstop=2 shiftwidth=2 expandtab
+]]
+
 
 -- Settings
 lvim.colorscheme = "everforest" -- edge, aurora, everforest, gruvbox-material
 lvim.transparent_window = true
 
-lvim.builtin.which_key.setup.window.winblend = 20 -- value between 0-100 0 for fully opaque and 100 for fully transparent
+-- value between 0-100 0 for fully opaque and 100 for fully transparent
+lvim.builtin.which_key.setup.window.winblend = 10
 lvim.builtin.which_key.mappings["t"] = {
     name = "+Terminal",
     f = { "<cmd>ToggleTerm<cr>", "Floating terminal" },
-    v = { "<cmd>2ToggleTerm size=60 direction=vertical<cr>", "Split vertical" },
+    v = { "<cmd>2ToggleTerm size=40 direction=vertical<cr>", "Split vertical" },
     h = { "<cmd>2ToggleTerm size=10 direction=horizontal<cr>", "Split horizontal" },
+}
+
+-- formatters settings
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+    { name = "isort" },
+    {
+        name = "black",
+        filetypes = { "python" }
+    },
 }
 
 -- ASCII text art generator
