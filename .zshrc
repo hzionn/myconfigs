@@ -14,7 +14,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # need Poetry's bin directory (/Users/zionn/.local/bin) in your PATH environment variable
 export PATH="/Users/zionn/.local/bin:$PATH"
 
-PATH=$(pyenv root)/shims:$PATH
 PATH="$PATH:./node_modules/.bin"
 
 # Set name of the theme to load
@@ -105,12 +104,14 @@ alias cdfs="cd ~ && cd \$(find * -type d | fzf --height 50% --border --preview '
 alias cdf="cd \$(find * -type d | fzf --height 50% --border --preview 'tree -C {}')"
 alias gnccu="cd ~ && cd Google\ Drive/My\ Drive/NCCU_courses/112-1"
 alias i112-1="cd ~ && cd Library/Mobile\ Documents/com~apple~CloudDocs/112-1"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # add file or folder to repo
-alias dotfilesa='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add'
+alias dotfilesa="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add"
 # remove file or folder from repo
-alias dotfilesr='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached'
-alias t='tmux'
+alias dotfilesr="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached"
+alias t="tmux"
+alias alacritty="nvim ~/.config/alacritty/alacritty.yml"
+alias swap="cd ~/.local/state/nvim/swap"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -134,12 +135,16 @@ unset __conda_setup
 
 # add new line right after every output
 # comment this block if use p10k's config for this instead
-function echo_blank() {
-    echo
-}
-precmd_functions+=echo_blank
+# function echo_blank() {
+#     echo
+# }
+# precmd_functions+=echo_blank
 
 # to manage shell history
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
