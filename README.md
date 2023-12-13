@@ -4,13 +4,11 @@ this repo is for tracking and storing my dotfiles over multiple devices.
 
 ## Contents
 
-- `.config/lvim/`: configuration for LunarVim
 - `.config/alacritty/`: configuration for Alacritty
-- `.tmux/`: tmux plugins
+- `.config/nvim/`: configuration for Neovim (specifically for Lazyvim)
 - `.tmux.conf`: configuration for tmux
 - `.zshrc`: zsh profile
-- `.p10k.zsh`: powerlevel10k config
-- TODO: brew list
+- TODO: brew list (daily use tools)
 
 ## How to
 
@@ -60,13 +58,14 @@ dotfiles checkout
 ## Notes
 
 - some of the plugins/features only function in `zsh`, and have to be installed manually:
-    - [editor]
+    - editor
         - nvim
-        - lvim
-    - [terminal]
-        - powerlevel10k
+        - Lazyvim
+    - terminal
         - exa
         - tmux
+    - git
+      - lazygit
 
 ## References 
 
