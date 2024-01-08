@@ -1,0 +1,35 @@
+[font]
+size = 16
+
+[font.bold]
+family = "Menlo"
+style = "Bold"
+
+[font.italic]
+family = "Menlo"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[scrolling]
+history = 10000
+
+[shell]
+args = ["--login"]
+program = "/bin/zsh"
+
+[window]
+decorations = "full"
+decorations_theme_variant = "Dark"
+dynamic_title = true
+opacity = 0.9
+title = "Alacritty"
+
+[window.dimensions]
+columns = 110
+lines = 40
+
+[window.padding]
+x = 5
+y = 5

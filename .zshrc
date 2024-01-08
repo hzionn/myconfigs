@@ -94,7 +94,8 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias docker="/Applications/Docker.app/Contents/Resources/bin/docker"
+
+# alias docker="/Applications/Docker.app/Contents/Resources/bin/docker"
 # alternative to ls and tree
 alias ls="exa --long --icons --no-permissions --no-user --git --time-style long-iso --time=modified --group-directories-first -a"
 alias tree="exa --tree"
@@ -110,7 +111,6 @@ alias dotfilesa="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add"
 # remove file or folder from repo
 alias dotfilesr="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached"
 alias t="tmux"
-alias alacritty="nvim ~/.config/alacritty/alacritty.yml"
 alias swap="cd ~/.local/state/nvim/swap"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

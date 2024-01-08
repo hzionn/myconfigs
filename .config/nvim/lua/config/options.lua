@@ -3,3 +3,9 @@
 -- Add any additional options here
 
 vim.opt.colorcolumn = "100"
+vim.opt.scrolloff = 10
+vim.o.background = "dark"
+
+-- disable autoformatting for global
+vim.g.autoformat = false
+
