@@ -67,8 +67,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	zsh-autosuggestions
+  git
+  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
