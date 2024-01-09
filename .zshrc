@@ -69,6 +69,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
 	git
 	zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -148,3 +149,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
