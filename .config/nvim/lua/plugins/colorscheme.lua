@@ -24,12 +24,31 @@ return {
       transparent_mode = true,
     },
   },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      styles = {
+        transparency = true,
+      },
+    },
+  },
+  {
+    "neanias/everforest-nvim",
+    config = function()
+      require("everforest").setup({
+        background = "hard",
+        transparent_background_level = 2,
+        italics = true,
+      })
+    end,
+  },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "vscode",
+      colorscheme = "everforest",
     },
   },
 }
