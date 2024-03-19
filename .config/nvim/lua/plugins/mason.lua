@@ -7,6 +7,7 @@ return {
       "black",
       "jedi-language-server",
       "clangd",
+      "r-languageserver"
     },
   },
 }

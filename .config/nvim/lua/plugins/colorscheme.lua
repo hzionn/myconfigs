@@ -2,6 +2,7 @@ return {
   -- install and configure colorscheme here
   {
     "folke/tokyonight.nvim",
+    name="tokyonight",
     opts = {
       transparent = true,
       styles = {
@@ -44,11 +45,15 @@ return {
     end,
   },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load which colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
+      -- colorscheme = "rose-pine",
+      -- colorscheme = "vscode",
+      -- colorscheme = "gruvbox",
       colorscheme = "everforest",
+      -- colorscheme = "tokyonight",
     },
   },
 }

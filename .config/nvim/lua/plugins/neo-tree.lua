@@ -12,7 +12,8 @@ return {
           ".vscode/",
         },
         hide_by_pattern = {
-          "*.toml",
+          "*.csv",
+          "*.Rproj",
         },
       },
     },

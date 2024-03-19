@@ -9,7 +9,7 @@ require("lspconfig").clangd.setup({
   capabilities = cmp_nvim_lsp.default_capabilities(),
   cmd = {
     "clangd",
-    "--offset-encoding=UTF-8",
+    "--offset-encoding=utf-16",
   },
 })
 
@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "lua",
     "c",
     "html",
+    "R",
   },
   command = "setlocal shiftwidth=2 tabstop=2",
 })
