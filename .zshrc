@@ -14,6 +14,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # need Poetry's bin directory (/Users/zionn/.local/bin) in your PATH environment variable
 export PATH="/Users/zionn/.local/bin:$PATH"
 
+HELIX_RUNTIME=~/src/helix/runtime
+
 PATH="$PATH:./node_modules/.bin"
 
 # Set name of the theme to load
