@@ -1,8 +1,8 @@
 [font]
-size = 16
+size = 17
 
 [font.bold]
-family = "Menlo"
+family = "Hack Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
@@ -15,6 +15,9 @@ family = "Hack Nerd Font Mono"
 [scrolling]
 history = 10000
 
+[cursor.style]
+blinking = "Always"
+
 [shell]
 args = ["--login"]
 program = "/bin/zsh"
@@ -23,7 +26,7 @@ program = "/bin/zsh"
 decorations = "full"
 decorations_theme_variant = "Dark"
 dynamic_title = true
-opacity = 0.9
+opacity = 0.90
 title = "Alacritty"
 
 [window.dimensions]
