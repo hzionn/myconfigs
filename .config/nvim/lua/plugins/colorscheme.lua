@@ -4,17 +4,17 @@ return {
     "folke/tokyonight.nvim",
     name="tokyonight",
     opts = {
-      transparent = true,
+      -- transparent = true,
       styles = {
-        sidebars = "transparent",
-        floats = "transparent",
+        -- sidebars = "transparent",
+        -- floats = "transparent",
       },
     },
   },
   {
     "Mofiqul/vscode.nvim",
     opts = {
-      transparent = true,
+      -- transparent = true,
       disable_nvimtree_bg = true,
     },
   },
@@ -22,7 +22,7 @@ return {
     "ellisonleao/gruvbox.nvim",
     opts = {
       dim_inactive = false,
-      transparent_mode = true,
+      -- transparent_mode = true,
     },
   },
   {
@@ -30,7 +30,7 @@ return {
     name = "rose-pine",
     opts = {
       styles = {
-        transparency = true,
+        -- transparency = true,
       },
     },
   },
@@ -39,7 +39,7 @@ return {
     config = function()
       require("everforest").setup({
         background = "hard",
-        transparent_background_level = 2,
+        -- transparent_background_level = 2,
         italics = true,
       })
     end,
@@ -49,10 +49,11 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "rose-pine",
+      -- colorscheme = "rose-pine-moon",
+      colorscheme = "tokyonight-moon",
       -- colorscheme = "vscode",
       -- colorscheme = "gruvbox",
-      colorscheme = "everforest",
+      -- colorscheme = "everforest",
       -- colorscheme = "tokyonight",
     },
   },

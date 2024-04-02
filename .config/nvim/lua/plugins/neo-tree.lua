@@ -14,6 +14,7 @@ return {
         hide_by_pattern = {
           "*.csv",
           "*.Rproj",
+          "*env/",
         },
       },
     },
