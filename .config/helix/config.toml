@@ -1,16 +1,32 @@
+theme = "base16_transparent"
+
 [editor]
+auto-format = false
+auto-save = true
 true-color = true
 scrolloff = 10
 line-number = "relative"
+bufferline = "multiple"
+color-modes = true
+cursorline = false  # this is not working
+cursorcolumn = true  # this is not working
+
+[editor.whitespace.render]
+space = "none"
+newline = "none"
+tab = "all"
+
+[editor.indent-guides]
+render = true
 
 [editor.lsp]
 display-messages = true
 
 [editor.statusline]
-left = ["mode", "spinner"]
-center = ["file-name"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
-separator = "||"
+left = ["mode", "file-name", "file-modification-indicator"]
+center = ["spinner"]  # this is not working
+right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-type"]
+separator = "~"  # this is not working
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"

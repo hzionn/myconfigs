@@ -9,7 +9,7 @@ inlayHint.enable = true
 [[language]]
 name = "python"
 scope ="source.python"
-auto-format = true
+auto-format = false
 indent = { tab-width = 4, unit = " " }
 formatter = { command = "black", args = ["-", "-q"] }
 roots = ["pyproject.toml", "pyrightconfig.json", "Poetry.lock"]
