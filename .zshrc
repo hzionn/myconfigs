@@ -114,6 +114,7 @@ alias dotfilesa="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add"
 # remove file or folder from repo
 alias dotfilesr="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached"
 alias t="tmux"
+alias ta="tmux attach"
 alias swap="cd ~/.local/state/nvim/swap"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -152,3 +153,4 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(gh copilot alias -- zsh)"
