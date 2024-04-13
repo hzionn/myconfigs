@@ -1,14 +1,20 @@
 # my dotfiles
 
-this repo is for tracking and storing my dotfiles over multiple devices.
+This repo is for tracking and storing my dotfiles across multiple devices.
 
 ## Contents
 
-- `.config/alacritty/`: configuration for Alacritty
-- `.config/nvim/`: configuration for Neovim (specifically for Lazyvim)
-- `.tmux.conf`: configuration for tmux
-- `.zshrc`: zsh profile
-- TODO: brew list (daily use tools)
+```bash
+.
+├── .tmux.conf
+├── .zshrc
+└── .config/
+    ├── alacritty/
+    ├── fish/
+    ├── helix/
+    ├── karabiner/
+    └── nvim/
+```
 
 ## How to
 
@@ -54,18 +60,6 @@ git clone --bare <github repo> $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 ```
-
-## Notes
-
-- some of the plugins/features only function in `zsh`, and have to be installed manually:
-    - editor
-        - nvim
-        - Lazyvim
-    - terminal
-        - exa
-        - tmux
-    - git
-      - lazygit
 
 ## References 
 
