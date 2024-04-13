@@ -18,7 +18,6 @@ require("lspconfig").clangd.setup({
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
     "lua",
-    "c",
     "html",
     "R",
   },
@@ -31,8 +30,18 @@ vim.api.nvim_create_autocmd("FileType", {
     "rust",
     "javascript",
     "typescript",
+    "c",
     "cpp",
   },
   command = "setlocal shiftwidth=4 tabstop=4",
 })
 
+-- enable relateive line number in normal mode
+vim.api.nvim_exec([[
+  autocmd InsertLeave * set relativenumber
+]], false)
+
+-- disable relative line number in insert mode
+vim.api.nvim_exec([[
+  autocmd InsertEnter * set norelativenumber
+]], false)

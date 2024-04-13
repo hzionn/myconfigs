@@ -3,7 +3,8 @@
 -- Add any additional options here
 
 -- vim.opt.colorcolumn = "90"
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
+vim.opt.sidescrolloff = 20
 vim.opt.guicursor = ""
 vim.o.background = "dark"
 
