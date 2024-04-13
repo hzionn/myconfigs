@@ -3,36 +3,40 @@ size = 17
 
 [font.bold]
 family = "Hack Nerd Font Mono"
+# family = "FiraCode Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
 family = "Hack Nerd Font Mono"
+# family = "FiraCode Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
 family = "Hack Nerd Font Mono"
+# family = "FiraCode Nerd Font Mono"
 
 [scrolling]
-history = 10000
+history = 5000
 
 [cursor.style]
 blinking = "Always"
 
 [shell]
 args = ["--login"]
-program = "/bin/zsh"
+# program = "/bin/zsh"
+program = "/usr/local/bin/fish"
 
 [window]
 decorations = "full"
 decorations_theme_variant = "Dark"
 dynamic_title = true
-#opacity = 0.90
 title = "Alacritty"
+#opacity = 0.90
 
 [window.dimensions]
-columns = 110
-lines = 40
+columns = 100
+lines = 30
 
 [window.padding]
-x = 5
-y = 5
+x = 0
+y = 0
