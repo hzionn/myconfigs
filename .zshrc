@@ -107,7 +107,6 @@ alias cdfs="cd ~ && cd \$(find * -type d | fzf --height 50% --border --preview '
 # fuzzy find file from current directory
 alias cdf="cd \$(find * -type d | fzf --height 50% --border --preview 'tree -C {}')"
 alias gnccu="cd ~ && cd Google\ Drive/My\ Drive/NCCU_courses/112-1"
-alias i112-1="cd ~ && cd Library/Mobile\ Documents/com~apple~CloudDocs/112-1"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # add file or folder to repo
 alias dotfilesa="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add"
@@ -154,3 +153,4 @@ eval "$(pyenv init -)"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(gh copilot alias -- zsh)"
+. "$HOME/.cargo/env"
