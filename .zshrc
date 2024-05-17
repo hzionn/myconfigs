@@ -14,8 +14,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # need Poetry's bin directory (/Users/zionn/.local/bin) in your PATH environment variable
 export PATH="/Users/zionn/.local/bin:$PATH"
 
-HELIX_RUNTIME=~/src/helix/runtime
-
 PATH="$PATH:./node_modules/.bin"
 
 # Set name of the theme to load
@@ -100,7 +98,8 @@ source $ZSH/oh-my-zsh.sh
 
 # alias docker="/Applications/Docker.app/Contents/Resources/bin/docker"
 # alternative to ls and tree
-alias ls="exa --long --icons --no-permissions --no-user --git --time-style long-iso --time=modified --group-directories-first -a"
+alias ls="exa --long --icons --no-permissions --no-user --git --time-style long-iso --time=modified --group-directories-first"
+alias la="exa --long --icons --no-permissions --no-user --git --time-style long-iso --time=modified --group-directories-first -a"
 alias tree="exa --tree"
 # fuzzy find file from HOME directory
 alias cdfs="cd ~ && cd \$(find * -type d | fzf --height 50% --border --preview 'tree -C {}')"
@@ -154,3 +153,6 @@ eval "$(pyenv init -)"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(gh copilot alias -- zsh)"
 . "$HOME/.cargo/env"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
