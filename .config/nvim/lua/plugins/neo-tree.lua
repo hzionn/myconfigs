@@ -20,7 +20,7 @@ return {
     },
     window = {
       width = 35,
-      position = "float",
+      position = "float", -- floating window rather than split window
     },
   },
 }

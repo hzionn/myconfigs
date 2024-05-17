@@ -10,3 +10,5 @@ vim.o.background = "dark"
 
 -- disable autoformatting for global
 vim.g.autoformat = false
+
+vim.lsp.inlay_hint.enable(false)
