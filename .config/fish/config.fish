@@ -7,9 +7,12 @@ alias la="exa --long --icons --no-permissions --no-user --git --time-style long-
 alias tree="exa --tree"
 alias cdfs="cd ~ && cd \$(find * -type d | fzf --height 50% --border --preview 'tree -C {}')"
 alias cdf="cd \$(find * -type d | fzf --height 50% --border --preview 'tree -C {}')"
-alias gnccu="cd ~ && cd Google\ Drive/My\ Drive/NCCU_courses/112-1"
+alias t="tmux"
+alias ta="tmux attach"
+
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias dotfilesa="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add"
 alias dotfilesr="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r --cached"
-alias t="tmux"
-alias ta="tmux attach"
+
+alias gnccu="cd ~ && cd Google\ Drive/My\ Drive/NCCU_courses/112-1"
+alias icloud="cd ~ && cd /Users/zionn/Library/Mobile\ Documents/com~apple~CloudDocs"
