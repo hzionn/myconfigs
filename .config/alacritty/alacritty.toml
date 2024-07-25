@@ -1,0 +1,40 @@
+[font]
+size = 17
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[scrolling]
+history = 5000
+
+[cursor.style]
+blinking = "Always"
+
+[shell]
+args = ["--login"]
+program = "/bin/zsh"
+# program = "/usr/local/bin/fish"
+
+[window]
+decorations = "full"
+decorations_theme_variant = "Dark"
+dynamic_title = true
+title = "Alacritty"
+# opacity = 0.90  # for transparent background
+
+[window.dimensions]
+columns = 110
+lines = 40
+
+[window.padding]
+x = 0
+y = 0
+
