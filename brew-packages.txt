@@ -1,0 +1,5 @@
+lazygit
+neovim
+ripgrep
+tmux
+pyenv
