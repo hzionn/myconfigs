@@ -9,18 +9,18 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    opts = {
-      styles = {
-        transparency = true,
-      },
-    },
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
   },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "catppuccin",
     },
   },
 }
