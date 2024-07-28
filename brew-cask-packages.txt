@@ -1,2 +1,3 @@
 termius
 kitty
+neovide
