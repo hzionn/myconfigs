@@ -1,3 +1,4 @@
 termius
 kitty
+neovide
 dbeaver-community

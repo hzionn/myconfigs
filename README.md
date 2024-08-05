@@ -61,6 +61,13 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 ```
 
+- install brew packages to new device
+
+```
+brew install $(brew-packages.txt)
+brew install --cask $(brew-cask-packages.txt)
+```
+
 ## References 
 
 - [Medium | How to manage your dotfiles with git](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
