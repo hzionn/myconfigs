@@ -5,7 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="refined"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -98,34 +98,30 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias t="tmux"
 alias ta="tmux attach"
 alias cat="bat"
-alias nv="neovide"
+alias nv="neovide --"
 alias cdf='cd "$(find * -type d -not -path "*/\.*" | fzf)"'
 
 source ~/.zsh_exports
-export BAT_THEME="base16"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(gh copilot alias -- zsh)"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH="/Users/hzionn/.local/bin:$PATH"
+export BAT_THEME="base16"
+export TERM='xterm-256color'
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height 60% \
+  --border sharp \
+  --layout reverse"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
 
 # to manage shell history
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTDUP=erase
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 

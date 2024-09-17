@@ -1,9 +1,6 @@
 return {
   -- install and configure colorscheme here
   {
-    "folke/tokyonight.nvim",
-  },
-  {
     "Mofiqul/vscode.nvim",
   },
   {
@@ -15,12 +12,15 @@ return {
     name = "catppuccin",
     priority = 1000
   },
+  {
+    "shaunsingh/nord.nvim",
+  },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "nord",
     },
   },
 }
