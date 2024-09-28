@@ -5,7 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="refined"
+ZSH_THEME="candy"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -62,6 +62,7 @@ ZSH_THEME="refined"
 plugins=(
   git
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,11 +102,12 @@ alias cat="bat"
 alias nv="neovide --"
 alias cdf='cd "$(find * -type d -not -path "*/\.*" | fzf)"'
 
+bindkey -v # use vim keybindings
+
 source ~/.zsh_exports
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(gh copilot alias -- zsh)"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH="/Users/hzionn/.local/bin:$PATH"
 export BAT_THEME="base16"
@@ -125,3 +127,6 @@ export HISTDUP=erase
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
+# >>> Added by Spyder >>>
+alias uninstall-spyder=/Users/hzionn/Library/spyder-6/uninstall-spyder.sh
+# <<< Added by Spyder <<<
