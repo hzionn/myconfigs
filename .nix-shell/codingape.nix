@@ -1,9 +1,14 @@
-{ pkgs ? import <nixpkgs> {} }:
+let
+  # nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-24.05";
+  # pkgs = import nixpkgs { config = {}; overlays = []; };
 
-pkgs.mkShell {
-  buildInputs = [
-    pkgs.python3
-    pkgs.python3Packages.tkinter
-    pkgs.python3Packages.pygame
+  pkgs = import <nixpkgs> { config = {}; overlays = []; };
+in
+
+pkgs.mkShellNoCC {
+  packages = with pkgs; [
+    python3
+    python3Packages.tkinter
+    python3Packages.pygame
   ];
 }
