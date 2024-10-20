@@ -1,0 +1,25 @@
+syntax on
+colorscheme habamax
+set background=dark
+
+set tabstop=4 softtabstop=4 shiftwidth=4
+set scrolloff=10
+set list listchars=tab:\:\ ,trail:·,extends:?,precedes:?,nbsp:×
+set ai
+set nowrap
+set relativenumber
+set ruler
+set hlsearch
+set cursorline
+
+" Shift + H to go to the previous buffer
+nnoremap <S-H> :bprevious<CR>
+
+" Shift + L to go to the next buffer
+nnoremap <S-L> :bnext<CR>
+
+" Ctrl + H to go to the left window
+nnoremap <C-H> <C-W>h
+
+" Ctrl + L to go to the right window
+nnoremap <C-L> <C-W>l
