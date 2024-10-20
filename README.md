@@ -2,19 +2,17 @@
 
 This repo is for tracking and storing my dotfiles across multiple devices.
 
+This file's structure mirrors how and where all of them will be stored in the `$HOME` directory on each machine.
+
 ## Contents
 
-```bash
-.
-├── .tmux.conf
-├── .zshrc
-└── .config/
-    ├── alacritty/
-    ├── fish/
-    ├── helix/
-    ├── karabiner/
-    └── nvim/
-```
+- zsh: zsh shell. `.zshrc`, `.zsh_aliases`, `.zsh_exports`
+- Nix: packages manager. different `nix-shell`
+- Nvim: text editor. for LazyVim
+- Zed: text editor.
+- Tmux: terminal multiplezer. tmux plugins
+- Karabiner: Re-map key-bindings.
+- Alacritty: terminal emulator.
 
 ## How to
 
