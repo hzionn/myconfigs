@@ -3,7 +3,6 @@ return {
   opts = {
     window = {
       position = "float",
-      -- position = "right",
       width = 40,
     },
     filesystem = {
