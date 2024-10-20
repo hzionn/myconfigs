@@ -9,7 +9,7 @@ import = [
 # foreground = "0xc0caf5"
 
 [font]
-size = 18
+size = 20
 
 [font.bold]
 family = "Hack Nerd Font Mono"
