@@ -95,38 +95,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias t="tmux"
-alias ta="tmux attach"
-alias cat="bat"
-alias nv="neovide --"
-alias cdf='cd "$(find * -type d -not -path "*/\.*" | fzf)"'
-
-bindkey -v # use vim keybindings
+source ~/.zsh_aliases
 
 source ~/.zsh_exports
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PATH=$PATH:$(go env GOPATH)/bin
-export PATH="/Users/hzionn/.local/bin:$PATH"
-export BAT_THEME="base16"
-export TERM='xterm-256color'
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--height 60% \
-  --border sharp \
-  --layout reverse"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
-
-# to manage shell history
-export HISTSIZE=10000
-export SAVEHIST=10000
-export HISTDUP=erase
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-
-# >>> Added by Spyder >>>
-alias uninstall-spyder=/Users/hzionn/Library/spyder-6/uninstall-spyder.sh
-# <<< Added by Spyder <<<
+bindkey -v # use vim keybindings
