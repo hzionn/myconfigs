@@ -1,15 +1,5 @@
-live_config_reload = true
-
-import = [
-    "~/.config/alacritty/themes/themes/nord.toml"
-]
-
-# [colors.primary]
-# background = "0x000000" # default value : '0x1a1b26'
-# foreground = "0xc0caf5"
-
 [font]
-size = 20
+size = 16
 
 [font.bold]
 family = "Hack Nerd Font Mono"
@@ -28,23 +18,29 @@ history = 5000
 [cursor.style]
 blinking = "Always"
 
-[shell]
+[terminal.shell]
 args = ["--login"]
 program = "/bin/zsh"
 # program = "/usr/local/bin/fish"
 
 [window]
-decorations = "full"
+decorations = "Full"
 decorations_theme_variant = "Dark"
+dynamic_padding = true
 dynamic_title = true
 title = "Alacritty"
 # opacity = 0.90  # for transparent background
 
 [window.dimensions]
-columns = 110
-lines = 40
+columns = 100
+lines = 35
 
 [window.padding]
-x = 0
+x = 2
 y = 0
 
+[general]
+live_config_reload = true
+import = [
+    "~/.config/alacritty/themes/themes/rose-pine.toml"
+]
