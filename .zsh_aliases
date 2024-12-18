@@ -4,7 +4,3 @@ alias ta="tmux attach"
 alias cat="bat"
 alias nv="neovide --"
 alias cdf='cd "$(find * -type d -not -path "*/\.*" | fzf)"'
-
-# >>> Added by Spyder >>>
-alias uninstall-spyder=/Users/hzionn/Library/spyder-6/uninstall-spyder.sh
-# <<< Added by Spyder <<<

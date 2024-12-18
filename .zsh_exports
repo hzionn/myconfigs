@@ -12,10 +12,3 @@ export FZF_DEFAULT_OPTS="--height 60% \
   --border sharp \
   --layout reverse"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
-
-# to manage shell history
-export HISTSIZE=10000
-export SAVEHIST=10000
-export HISTDUP=erase
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
