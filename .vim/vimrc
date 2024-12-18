@@ -11,6 +11,7 @@ set relativenumber
 set ruler
 set hlsearch
 set cursorline
+set mouse=a
 
 " Shift + H to go to the previous buffer
 nnoremap <S-H> :bprevious<CR>
@@ -23,3 +24,9 @@ nnoremap <C-H> <C-W>h
 
 " Ctrl + L to go to the right window
 nnoremap <C-L> <C-W>l
+
+" Ctrl + K to go to the up window
+nnoremap <C-K> <C-W>k
+
+" Ctrl + J to go to the down window
+nnoremap <C-J> <C-W>j
