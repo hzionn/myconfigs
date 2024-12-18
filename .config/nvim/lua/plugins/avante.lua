@@ -4,18 +4,19 @@
 return {
   "yetone/avante.nvim",
   event = "VeryLazy", -- Load the plugin lazily
-  build = ":AvanteBuild", -- Build command for the plugin
+  build = "make", -- Build command for the plugin
   opts = {
     -- add any opts here
     provider = "copilot", -- Set the provider to 'openai', 'copilot', 'claude'
     hints = { enable = true }, -- Enable hints
   },
   dependencies = {
-    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+    "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below is optional, make sure to setup it properly if you have lazy=true
+    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "zbirenbaum/copilot.lua",
     {
       "MeanderingProgrammer/render-markdown.nvim",

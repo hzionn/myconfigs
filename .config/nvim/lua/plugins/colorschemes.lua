@@ -16,11 +16,11 @@ return {
     "shaunsingh/nord.nvim",
   },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load which colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nord",
+      colorscheme = "rose-pine",
     },
   },
 }

@@ -3,13 +3,19 @@
 -- Add any additional options here
 
 vim.opt.scrolloff = 15
-vim.opt.sidescrolloff = 8
+vim.opt.sidescrolloff = 3
 vim.g.laststatus = 3
 vim.opt.background = "dark"
 vim.g.autoformat = false
 vim.g.spell = false
 
+-- set to 1, the nvim will auto close current preview window when changing
+-- from Markdown buffer to another buffer
+-- 0 for not auto close
+vim.g.mkdp_auto_close = 0
+
 vim.g.termguicolors = true
-vim.opt.guifont = "Hack Nerd Font Mono:h20"
+vim.opt.guifont = "Hack Nerd Font Mono:h16"
 vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_cursor_vfx_particle_lifetime = 0.03
+vim.g.neovide_transparency = 1.0
