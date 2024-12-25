@@ -15,12 +15,15 @@ return {
   {
     "shaunsingh/nord.nvim",
   },
+  {
+    "navarasu/onedark.nvim",
+  },
 
   -- Configure LazyVim to load which colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "catppuccin-frappe",
     },
   },
 }

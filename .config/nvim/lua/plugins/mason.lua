@@ -1,19 +1,18 @@
 return {
   "williamboman/mason.nvim",
+
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "stevearc/conform.nvim",
   },
+
   config = function()
-    -- import mason
     local mason = require("mason")
-
-    -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-
     local mason_tool_installer = require("mason-tool-installer")
+    local conform = require("conform")
 
-    -- enable mason and configure icons
     mason.setup({
       ui = {
         icons = {
@@ -25,22 +24,39 @@ return {
     })
 
     mason_lspconfig.setup({
-      -- list of servers for mason to install
       ensure_installed = {
         "html",
         "lua_ls",
         "pyright",
+        "ts_ls",
+        "gopls",
+        "sqlls",
       },
+      automatic_installation = true,
     })
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
-        "pylint",
+        -- formatter
+        "prettier",
+        "stylua",
+        "isort",
+        "ruff",
+        "black",
+        "sql-formatter",
+        -- linter
         "eslint_d",
+      },
+      automatic_installation = true,
+    })
+
+    -- here to set the formatters
+    conform.setup({
+      formatters_by_ft = {
+        python = { "black", "ruff", "isort" },
+        go = { "gofmt" },
+        sql = { "sql_formatter" },
+        html = { "prettier" },
       },
     })
   end,

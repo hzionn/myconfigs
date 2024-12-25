@@ -1,13 +1,30 @@
 return {
-  "jose-elias-alvarez/null-ls.nvim",
+  "neovim/nvim-lspconfig",
+
   config = function()
-    local null_ls = require("null-ls")
-    null_ls.setup({
-      sources = {
-        null_ls.builtins.formatting.prettier, -- For Prettier
-        null_ls.builtins.formatting.black, -- For Black
-        null_ls.builtins.formatting.stylua, -- For Stylua
-        null_ls.builtins.formatting.sql_formatter, -- For SQL
+    local lspconfig = require("lspconfig")
+
+    lspconfig.pyright.setup({})
+    lspconfig.tsserver.setup({})
+    lspconfig.gopls.setup({})
+    lspconfig.sqlls.setup({})
+
+    lspconfig.lua_ls.setup({
+      settings = {
+        Lua = {
+          runtime = {
+            version = "LuaJIT",
+          },
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
       },
     })
   end,
