@@ -6,7 +6,6 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
-
 {
   "show_inline_completions": false,
   "assistant": {
@@ -16,16 +15,35 @@
     },
     "version": "2"
   },
+  "show_completions_on_input": true,
   "vim_mode": true,
   "relative_line_numbers": true,
   "buffer_font_family": "Hack Nerd Font Mono",
-  "buffer_font_size": 16,
+  "buffer_font_size": 20,
   "ui_font_family": "Hack Nerd Font Mono",
   "ui_font_size": 15,
   "autosave": "on_focus_change",
+  "format_on_save": "off",
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright"],
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "Catppuccin Mocha"
   }
 }
