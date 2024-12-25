@@ -10,3 +10,4 @@ tre-command
 lazydocker
 kdash
 fzf
+yazi
