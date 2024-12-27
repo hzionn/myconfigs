@@ -1,0 +1,13 @@
+lazygit
+neovim
+ripgrep
+tmux
+pyenv
+gh
+tldr
+bat
+tre-command
+lazydocker
+kdash
+fzf
+yazi

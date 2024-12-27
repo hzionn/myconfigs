@@ -1,0 +1,5 @@
+tmux
+neovim
+htop
+nodejs
+tre-command
