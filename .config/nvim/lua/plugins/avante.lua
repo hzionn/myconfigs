@@ -1,6 +1,3 @@
--- This is a Lua plugin configuration file for the 'yetone/avante.nvim' plugin.
--- It includes settings for the plugin, dependencies, and optional configurations.
-
 return {
   "yetone/avante.nvim",
   event = "VeryLazy", -- Load the plugin lazily

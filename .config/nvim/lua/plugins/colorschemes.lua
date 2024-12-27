@@ -15,9 +15,6 @@ return {
   {
     "shaunsingh/nord.nvim",
   },
-  {
-    "navarasu/onedark.nvim",
-  },
 
   -- Configure LazyVim to load which colorscheme
   {
