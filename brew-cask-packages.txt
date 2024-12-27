@@ -1,4 +1,0 @@
-termius
-warp
-neovide
-dbeaver-community
