@@ -4,3 +4,4 @@ alias ta="tmux attach"
 alias cat="bat"
 alias nv="neovide --"
 alias cdf='cd "$(find * -type d -not -path "*/\.*" | fzf)"'
+alias yz="yazi"
