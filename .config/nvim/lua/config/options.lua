@@ -18,4 +18,4 @@ vim.g.termguicolors = true
 vim.opt.guifont = "Hack Nerd Font Mono:h20"
 vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_cursor_vfx_particle_lifetime = 0.03
-vim.g.neovide_transparency = 1.0
+vim.g.neovide_opacity = 1.0

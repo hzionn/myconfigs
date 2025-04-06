@@ -1,0 +1,9 @@
+[
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem"
+    }
+  }
+]

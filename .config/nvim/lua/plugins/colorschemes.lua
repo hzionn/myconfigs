@@ -20,7 +20,10 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-frappe",
+      -- colorscheme = "catppuccin-frappe",
+      colorscheme = "rose-pine-moon",
+      -- colorscheme = "tokyonight-night",
+      -- colorscheme = "vscode",
     },
   },
 }

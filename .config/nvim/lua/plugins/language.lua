@@ -5,8 +5,8 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        -- pyright = {},
-        ruff_lsp = {},
+        pyright = {},
+        -- ruff_lsp = {},
         tsserver = {},
         gopls = {},
         sqlls = {},
@@ -35,11 +35,15 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
+        lua = { "stylua" },
         python = { "black", "ruff", "isort" },
+        typescript = { "prettier" },
+        javascript = { "prettier" },
         go = { "gofmt" },
         sql = { "sql_formatter" },
         html = { "prettier" },
         markdown = { "prettier" },
+        c = { "clang-format" },
       },
     },
   },
