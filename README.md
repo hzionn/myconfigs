@@ -29,6 +29,7 @@ dotfiles config --local status.showUntrackedFiles no
 ### usage
 
 - create a github repo for storing dotfiles
+
 ```
 git remote add origin <github repo>
 git branch -M main
@@ -36,6 +37,7 @@ git push -u origin main
 ```
 
 - add and commit files to repo
+
 ```
 dotfiles status
 dotfiles add .zshrc
@@ -44,6 +46,7 @@ dotfiles push
 ```
 
 - `Git bare repo` is not suppose to store anything, but if there is a need to
+
 ```
 # add file or folder to repo
 alias dotfilesa='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add'
@@ -53,6 +56,7 @@ alias dotfilesr='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME rm -r
 ```
 
 - clone to secondary device
+
 ```
 git clone --bare <github repo> $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -66,7 +70,7 @@ brew install $(brew-packages.txt)
 brew install --cask $(brew-cask-packages.txt)
 ```
 
-## References 
+## References
 
 - [Medium | How to manage your dotfiles with git](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
 - [Hackmd | Git Bare Repo](https://hackmd.io/@hbdoy/BJz0V5tv8)
