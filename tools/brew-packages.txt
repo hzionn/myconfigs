@@ -6,6 +6,8 @@ pyenv
 gh
 tldr
 bat
+eza
+fd
 tre-command
 lazydocker
 kdash
