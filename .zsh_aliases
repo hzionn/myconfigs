@@ -1,7 +1,11 @@
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias l="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ltree="eza --tree --level=2  --icons --git"
 alias t="tmux"
 alias ta="tmux attach"
 alias cat="bat"
 alias nv="neovide --"
-alias cdf='cd "$(find * -type d -not -path "*/\.*" | fzf)"'
+# alias cdf='cd "$(find * -type d -not -path "*/\.*" | fzf)"'
+alias cdf='cd "$(fd --type d | fzf)"'
 alias yz="yazi"
