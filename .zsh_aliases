@@ -6,6 +6,6 @@ alias t="tmux"
 alias ta="tmux attach"
 alias cat="bat"
 alias nv="neovide --"
-# alias cdf='cd "$(find * -type d -not -path "*/\.*" | fzf)"'
 alias cdf='cd "$(fd --type d | fzf)"'
 alias yz="yazi"
+alias vim="nvim"
