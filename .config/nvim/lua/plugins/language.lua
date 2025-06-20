@@ -1,12 +1,11 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
-      ---@type lspconfig.options
       servers = {
         pyright = {},
-        -- ruff_lsp = {},
+        ruff = {},
         tsserver = {},
         gopls = {},
         sqlls = {},
@@ -24,12 +23,17 @@ return {
         },
       },
       ensure_installed = {
+        "pyright",
+        "ruff",
+        "typescript-language-server",
+        "gopls",
         "stylua",
         "shellcheck",
         "shfmt",
         "flake8",
       },
     },
+    { "williamboman/mason-lspconfig.nvim", config = function() end },
   },
   {
     "stevearc/conform.nvim",
