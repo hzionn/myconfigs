@@ -5,7 +5,10 @@ alias ltree="eza --tree --level=2  --icons --git"
 alias t="tmux"
 alias ta="tmux attach"
 alias cat="bat"
-alias nv="neovide --"
-alias cdf='cd "$(fd --type d | fzf)"'
+alias cdf='cd "$(fd --type d --max-depth 4 \
+  --exclude node_modules \
+  --exclude .git \
+  --exclude __pycache__ \
+  | fzf)"'
 alias yz="yazi"
 alias vim="nvim"
