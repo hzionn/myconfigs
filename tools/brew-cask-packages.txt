@@ -1,5 +1,4 @@
 termius
 warp
-neovide
 dbeaver-community
 ghostty

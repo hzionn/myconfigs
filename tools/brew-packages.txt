@@ -8,7 +8,6 @@ tldr
 bat
 eza
 fd
-tre-command
 lazydocker
 kdash
 fzf
