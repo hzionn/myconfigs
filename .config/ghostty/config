@@ -3,7 +3,7 @@
 #font-family-italic = "Hack Nerd Font Mono Italic"
 #font-family-bold-italic = "Hack Nerd Font Mono Bold Italic"
 font-size = 20
-theme = "catppuccin-mocha"
+theme = Catppuccin Mocha
 window-height = 35
 window-width = 80
 window-padding-x = 0
@@ -12,3 +12,5 @@ quit-after-last-window-closed = "true"
 cursor-invert-fg-bg = "true"
 keybind = global:command+\=toggle_quick_terminal
 quick-terminal-position = "center"
+background-opacity = 0.9
+background-blur = true
