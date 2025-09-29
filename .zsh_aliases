@@ -1,14 +1,16 @@
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias l="eza -l --icons --git -a"
+alias l="eza -l --icons --git"
+alias la="eza -l --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias ltree="eza --tree --level=2  --icons --git"
 alias t="tmux"
 alias ta="tmux attach"
 alias cat="bat"
+alias yz="yazi"
+alias vim="nvim"
 alias cdf='cd "$(fd --type d --max-depth 4 \
   --exclude node_modules \
   --exclude .git \
   --exclude __pycache__ \
+  --exclude OrbStack \
   | fzf)"'
-alias yz="yazi"
-alias vim="nvim"

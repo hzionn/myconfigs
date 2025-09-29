@@ -6,6 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="candy"
+# ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -101,8 +102,6 @@ source ~/.zsh_exports
 
 bindkey -v # use vim keybindings
 
-tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -118,12 +117,13 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/hzionn/.cache/lm-studio/bin"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/hzionn/DEVs/linebot-gemini-python/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hzionn/DEVs/linebot-gemini-python/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/hzionn/DEVs/linebot-gemini-python/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hzionn/DEVs/linebot-gemini-python/google-cloud-sdk/completion.zsh.inc'; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+export PATH="$HOME/.local/bin:$PATH"
