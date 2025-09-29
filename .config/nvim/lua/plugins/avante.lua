@@ -8,12 +8,12 @@ return {
     providers = {
       copilot = {
         endpoint = "https://api.githubcopilot.com",
-        model = "claude-4-sonnet",
+        model = "gpt-4.1",
         proxy = nil, -- [protocol://]host[:port] Use this proxy
         allow_insecure = false, -- Allow insecure server connections
         extra_request_body = {
           timeout = 30000, -- Timeout in milliseconds
-          temperature = 0.5,
+          temperature = 0.6,
           max_completion_tokens = 20480,
         },
       },
@@ -28,7 +28,7 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
-    "echasnovski/mini.pick", -- for file_selector provider mini.pick
+    "nvim-mini/mini.pick", -- for file_selector provider mini.pick
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "ibhagwan/fzf-lua", -- for file_selector provider fzf
@@ -46,8 +46,6 @@ return {
           drag_and_drop = {
             insert_mode = true,
           },
-          -- required for Windows users
-          use_absolute_path = true,
         },
       },
     },

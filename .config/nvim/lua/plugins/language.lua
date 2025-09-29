@@ -13,7 +13,7 @@ return {
     },
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ui = {
         icons = {
@@ -33,7 +33,7 @@ return {
         "flake8",
       },
     },
-    { "williamboman/mason-lspconfig.nvim", config = function() end },
+    { "mason-org/mason-lspconfig.nvim", config = function() end },
   },
   {
     "stevearc/conform.nvim",
@@ -46,8 +46,12 @@ return {
         go = { "gofmt" },
         sql = { "sql_formatter" },
         html = { "prettier" },
-        markdown = { "prettier" },
+        -- markdown = { "prettier" },
+        markdown = { "markdownlint-cli2" },
         c = { "clang-format" },
+        yaml = { "prettier" },
+        css = { "prettier" },
+        toml = { "tombi" },
       },
     },
   },
