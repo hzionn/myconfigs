@@ -8,9 +8,35 @@ alias ta="tmux attach"
 alias cat="bat"
 alias yz="yazi"
 alias vim="nvim"
-alias cdf='cd "$(fd --type d --max-depth 4 \
+alias c="clear"
+alias gs="git status -sb"
+alias gds="git diff --staged"
+alias ccdf='cd "$(fd --type d --max-depth 4 \
   --exclude node_modules \
   --exclude .git \
   --exclude __pycache__ \
   --exclude OrbStack \
   | fzf)"'
+
+cdf() {
+  local base="${1:-.}"
+  local d
+
+  d="$(
+    fd --type d --max-depth 5 \
+      --hidden --follow \
+      --exclude .git \
+      --exclude node_modules \
+      --exclude __pycache__ \
+      --exclude .venv \
+      --exclude venv \
+      --exclude dist \
+      --exclude build \
+      . "$base" \
+    | fzf --height 60% --layout=reverse --border \
+          --preview 'ls -la --color=always {} | head -200' \
+          --preview-window=right:60%
+  )" || return
+
+  [[ -n "$d" ]] && cd -- "$d"
+}

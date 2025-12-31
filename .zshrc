@@ -98,32 +98,36 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.zsh_aliases
 
-source ~/.zsh_exports
+[ -f ~/.zsh_exports ] && source ~/.zsh_exports
 
 bindkey -v # use vim keybindings
 
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# Lazy load conda
+function conda() {
+  unfunction conda
+  local CONDA_BIN="/opt/anaconda3/bin/conda"
+
+  if [ -f "$CONDA_BIN" ]; then
+    eval "$("$CONDA_BIN" 'shell.zsh' 'hook' 2> /dev/null)"
+    conda "$@"
+  else
+    echo "Conda not found at $CONDA_BIN"
+  fi
+}
 # <<< conda initialize <<<
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/hzionn/DEVs/linebot-gemini-python/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hzionn/DEVs/linebot-gemini-python/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/hzionn/DEVs/linebot-gemini-python/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hzionn/DEVs/linebot-gemini-python/google-cloud-sdk/completion.zsh.inc'; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/hzionn/.bun/_bun" ] && source "/Users/hzionn/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/hzionn/.antigravity/antigravity/bin:$PATH"
