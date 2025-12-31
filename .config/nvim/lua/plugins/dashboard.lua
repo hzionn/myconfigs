@@ -1,3 +1,4 @@
+-- .config/nvim/lua/plugins/dashboard.lua
 return {
   "snacks.nvim",
   opts = {
