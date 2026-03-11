@@ -1,5 +1,5 @@
 [font]
-size = 20
+size = 17
 
 [font.bold]
 family = "Hack Nerd Font Mono"
@@ -31,7 +31,7 @@ program = "/bin/zsh"
 # program = "/usr/local/bin/fish"
 
 [window]
-decorations = "Full"  # Full, None, Transparent, Buttonless
+decorations = "full"  # Full, None, Transparent, Buttonless
 decorations_theme_variant = "Dark"  # Dark, Light, None
 dynamic_padding = true
 dynamic_title = true
