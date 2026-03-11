@@ -1,3 +1,4 @@
+typeset -U path
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -92,30 +93,25 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.zsh_aliases
 
+source ~/.zsh_aliases
 [ -f ~/.zsh_exports ] && source ~/.zsh_exports
 
-bindkey -v # use vim keybindings
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
 
-# >>> conda initialize >>>
-# Lazy load conda
-function conda() {
-  unfunction conda
-  local CONDA_BIN="/opt/anaconda3/bin/conda"
-
-  if [ -f "$CONDA_BIN" ]; then
-    eval "$("$CONDA_BIN" 'shell.zsh' 'hook' 2> /dev/null)"
-    conda "$@"
-  else
-    echo "Conda not found at $CONDA_BIN"
-  fi
+HISTORY_IGNORE='(git|git *|cat|cat *)'
+zshaddhistory() {
+  emulate -L zsh
+  [[ $1 != ${~HISTORY_IGNORE} ]]
 }
-# <<< conda initialize <<<
+
+bindkey -v # use vim keybindings
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -125,9 +121,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # bun completions
 [ -s "/Users/hzionn/.bun/_bun" ] && source "/Users/hzionn/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # Added by Antigravity
 export PATH="/Users/hzionn/.antigravity/antigravity/bin:$PATH"
+source <(pm completion zsh)

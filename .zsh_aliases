@@ -8,19 +8,34 @@ alias ta="tmux attach"
 alias cat="bat"
 alias yz="yazi"
 alias vim="nvim"
-alias c="clear"
+alias c="clear && clear"
 alias gs="git status -sb"
 alias gds="git diff --staged"
-alias ccdf='cd "$(fd --type d --max-depth 4 \
-  --exclude node_modules \
-  --exclude .git \
-  --exclude __pycache__ \
-  --exclude OrbStack \
-  | fzf)"'
+alias claude-clean='find ~/.claude/projects -maxdepth 2 -mtime +7 -delete'
+alias codex-clean='find ~/.codex/sessions -name "*.jsonl" -mtime +7 -delete && find ~/.codex/archived_sessions -name "*.jsonl" -mtime +7 -delete'
 
 cdf() {
   local base="${1:-.}"
   local d
+
+  # Define dot folders to KEEP (whitelist)
+  local keep_dot_dirs=(
+    ".config"
+    ".ssh"
+    ".local"
+    ".agents"
+    ".codex"
+    ".claude"
+    # Add more here: ".kube" ".aws" etc.
+  )
+
+  # Construct ignore patterns:
+  # 1. Ignore ALL dotfiles/folders (.*)
+  # 2. Un-ignore (!) the specific ones we want to keep
+  local ignore_list=".*"
+  for dir in "${keep_dot_dirs[@]}"; do
+    ignore_list+=$'\n!'"$dir"
+  done
 
   d="$(
     fd --type d --max-depth 5 \
@@ -32,11 +47,20 @@ cdf() {
       --exclude venv \
       --exclude dist \
       --exclude build \
+      --exclude OrbStack \
+      --exclude Library \
+      --exclude Applications \
+      --ignore-file <(echo "$ignore_list") \
       . "$base" \
     | fzf --height 60% --layout=reverse --border \
-          --preview 'ls -la --color=always {} | head -200' \
+          --preview 'ls -a --color=always {} | head -200' \
           --preview-window=right:60%
   )" || return
 
   [[ -n "$d" ]] && cd -- "$d"
+}
+
+update() {
+  brew update && brew upgrade
+  uv tool upgrade --all
 }
