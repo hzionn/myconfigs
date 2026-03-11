@@ -1,7 +1,7 @@
 return {
   -- install and configure colorscheme here
   {
-    "Mofiqul/vscode.nvim",
+    "vague2k/vague.nvim",
   },
   {
     "rose-pine/neovim",
@@ -37,10 +37,10 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "vague",
+      -- colorscheme = "rose-pine-moon",
       -- colorscheme = "retrobox",
-      -- colorscheme = "sonokai",
-      -- colorscheme = "catppuccin-frappe",
+      -- colorscheme = "tokyonight-moon",
     },
   },
 }

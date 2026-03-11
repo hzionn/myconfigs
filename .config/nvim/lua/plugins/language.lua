@@ -4,11 +4,16 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
       servers = {
-        pyright = {},
+        pyrefly = {
+          init_options = {
+            displayTypeErrors = "force-on",
+          },
+        },
         ruff = {},
         tsserver = {},
         gopls = {},
         sqlls = {},
+        rust_analyzer = {},
       },
     },
   },
@@ -23,7 +28,7 @@ return {
         },
       },
       ensure_installed = {
-        "pyright",
+        "pyrefly",
         "ruff",
         "typescript-language-server",
         "gopls",
@@ -39,19 +44,29 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
+        astro = { "prettier_astro" },
+        rust = { "ast_grep" },
         lua = { "stylua" },
-        python = { "black", "ruff", "isort" },
+        python = { "isort", "ruff_format" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         go = { "gofmt" },
         sql = { "sql_formatter" },
         html = { "prettier" },
-        -- markdown = { "prettier" },
-        markdown = { "markdownlint-cli2" },
+        markdown = { "prettier" },
+        -- markdown = { "markdownlint-cli2" },
         c = { "clang-format" },
         yaml = { "prettier" },
+        json = { "prettier" },
         css = { "prettier" },
         toml = { "tombi" },
+      },
+      formatters = {
+        prettier_astro = {
+          command = "prettier",
+          args = { "--plugin", "prettier-plugin-astro", "--stdin-filepath", "$FILENAME" },
+          stdin = true,
+        },
       },
     },
   },
