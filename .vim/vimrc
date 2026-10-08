@@ -1,3 +1,5 @@
+let mapleader = " "
+
 syntax on
 colorscheme habamax
 set background=dark
@@ -5,11 +7,15 @@ set background=dark
 set tabstop=4 softtabstop=4 shiftwidth=4
 set scrolloff=10
 set list listchars=tab:\:\ ,trail:·,extends:?,precedes:?,nbsp:×
+" Indent guides: a │ at each indent level of leading spaces (matches shiftwidth=4)
+let &listchars .= ',leadmultispace:│   '
 set ai
 set nowrap
 set relativenumber
 set ruler
 set hlsearch
+" Show [current/total] match count when searching
+set shortmess-=S
 set cursorline
 set mouse=a
 
@@ -30,3 +36,6 @@ nnoremap <C-K> <C-W>k
 
 " Ctrl + J to go to the down window
 nnoremap <C-J> <C-W>j
+
+" Leader + e to toggle the file explorer (netrw); press again to return to the file
+nnoremap <silent> <leader>e :execute &filetype ==# 'netrw' ? 'Rexplore' : 'Explore'<CR>
