@@ -1,0 +1,11 @@
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ls="eza"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ltree="eza --tree --level=2  --icons --git"
+alias ta="tmux attach"
+alias cat="bat"
+alias yz="yazi"
+alias vim="nvim"
+alias c="clear && clear"
+alias gs="git status -sb"
+alias gds="git diff --staged"

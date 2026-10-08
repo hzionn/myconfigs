@@ -6,7 +6,7 @@ This file's structure mirrors how and where all of them will be stored in the `$
 
 ## Contents
 
-- zsh: zsh shell. `.zshrc`, `.zsh_aliases`, `.zsh_exports`
+- zsh: zsh shell. `~/.zshenv` only sets `ZDOTDIR`; everything else lives in `~/.zsh/` (`.zprofile` for PATH, `.zshrc`, `aliases.zsh`, `functions.zsh`, `env.zsh`)
 - Nix: packages manager. different `nix-shell`
 - Nvim: text editor. for LazyVim
 - Zed: text editor.

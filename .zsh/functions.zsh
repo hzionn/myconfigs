@@ -1,19 +1,3 @@
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias l="eza -l --icons --git"
-alias la="eza -l --icons --git -a"
-alias lt="eza --tree --level=2 --long --icons --git"
-alias ltree="eza --tree --level=2  --icons --git"
-alias t="tmux"
-alias ta="tmux attach"
-alias cat="bat"
-alias yz="yazi"
-alias vim="nvim"
-alias c="clear && clear"
-alias gs="git status -sb"
-alias gds="git diff --staged"
-alias claude-clean='find ~/.claude/projects -maxdepth 2 -mtime +7 -delete'
-alias codex-clean='find ~/.codex/sessions -name "*.jsonl" -mtime +7 -delete && find ~/.codex/archived_sessions -name "*.jsonl" -mtime +7 -delete'
-
 cdf() {
   local base="${1:-.}"
   local d
@@ -21,12 +5,9 @@ cdf() {
   # Define dot folders to KEEP (whitelist)
   local keep_dot_dirs=(
     ".config"
-    ".ssh"
-    ".local"
     ".agents"
     ".codex"
     ".claude"
-    # Add more here: ".kube" ".aws" etc.
   )
 
   # Construct ignore patterns:
@@ -61,6 +42,30 @@ cdf() {
 }
 
 update() {
-  brew update && brew upgrade
+  brew update && brew upgrade -y
   uv tool upgrade --all
+  codex update
+  claude --update
+  agy update
+
+  npm install -g --prefix "$HOME/.local" \
+    @agentclientprotocol/codex-acp@latest \
+    @agentclientprotocol/claude-agent-acp@latest
+}
+
+t() {
+  if (( $# > 0 )); then
+    command tmux "$@"
+    return
+  fi
+
+  local session_name="${PWD:t}"
+  local -a tmux_cmd=(tmux)
+
+  if [[ -n ${TMUX_SOCKET:-} ]]; then
+    tmux_cmd+=(-S "$TMUX_SOCKET")
+  fi
+
+  session_name=${session_name//[^[:alnum:]_.-]/-}
+  "${tmux_cmd[@]}" new-session -A -s "$session_name"
 }

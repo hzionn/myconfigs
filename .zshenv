@@ -1,4 +1,2 @@
-# to manage shell history
-export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=50000
-export SAVEHIST=10000
+# The only zsh file that has to live in $HOME: it tells zsh where the rest is.
+export ZDOTDIR="$HOME/.zsh"
