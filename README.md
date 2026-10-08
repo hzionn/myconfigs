@@ -6,7 +6,7 @@ This file's structure mirrors how and where all of them will be stored in the `$
 
 ## Contents
 
-- zsh: zsh shell. `~/.zshenv` only sets `ZDOTDIR`; everything else lives in `~/.zsh/` (`.zprofile` for PATH, `.zshrc`, `aliases.zsh`, `functions.zsh`, `env.zsh`)
+- zsh: zsh shell. `~/.zshenv` only sets `ZDOTDIR`; everything else lives in `~/.zsh/` (`.zprofile` for PATH, `.zshrc`, `aliases.zsh`, `functions.zsh`, `env.zsh`). No oh-my-zsh: the candy prompt, completion and key bindings are in `.zshrc`; `zsh-autosuggestions` and `zsh-syntax-highlighting` come from brew/apt (listed in `tools/`)
 - Nix: packages manager. different `nix-shell`
 - Nvim: text editor. for LazyVim
 - Zed: text editor.

@@ -3,3 +3,5 @@ neovim
 htop
 nodejs
 tre-command
+zsh-autosuggestions
+zsh-syntax-highlighting

@@ -12,3 +12,5 @@ lazydocker
 kdash
 fzf
 yazi
+zsh-autosuggestions
+zsh-syntax-highlighting

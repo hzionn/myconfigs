@@ -1,3 +1,8 @@
+# `history` with no args shows everything (zsh's default shows only the last 16)
+history() {
+  if (( $# )); then builtin fc -l "$@"; else builtin fc -l 1; fi
+}
+
 cdf() {
   local base="${1:-.}"
   local d
