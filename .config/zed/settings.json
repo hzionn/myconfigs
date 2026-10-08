@@ -7,6 +7,37 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "effort": "high",
+        "model": "default"
+      },
+      "type": "registry"
+    },
+    "antigravity-acp": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "default_config_options": {
+        "model": "gpt-5.6-terra"
+      },
+      "type": "registry"
+    }
+  },
   "edit_predictions": {
     "provider": "copilot"
   },
@@ -16,6 +47,10 @@
   },
   "show_edit_predictions": true,
   "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "dock": "right",
     "tool_permissions": {
       "default": "allow"
     },
@@ -32,19 +67,26 @@
       },
       {
         "provider": "copilot_chat",
-        "model": "gpt-5.2-codex",
+        "model": "gpt-5.4",
         "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
-        "model": "gpt-5.4",
+        "model": "gpt-5.4-mini",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5.3-codex",
         "enable_thinking": false
       }
     ],
     "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini",
+      "enable_thinking": true,
+      "effort": "high",
+      "provider": "openai-subscribed",
+      "model": "gpt-5.4",
     },
     "model_parameters": [],
   },
@@ -98,7 +140,7 @@
     "light": "One Light",
     "dark": "One Dark",
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": "Catppuccin Latte",
   "terminal": {
     "font_size": 15,
   },
